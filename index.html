@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Advice Box!!! (GYAAN)</title>
+<script>
+
+
+var myAdviceList = [
+    "Eat more food duh.",
+    "Never trust a squirel.",
+    "Homework is  practice for real life thin abt it",
+    "If you are in a j*b, try quit it.",
+    "Wear Socks with sandals, To impress a boy/girl.",
+    "A microwave dings = warning before u starve for lunch  if ya don't rush.",
+    "Always bring a spare pencil.", 
+    "Sleeps are  time travel.",
+    "If a duck stares at you the you stare bac and Do NOTTT blink first.",
+    "The best snack is the one you did not give to anyone else."
+];
+
+var clickCount = 0; 
+</script>
+</head>
+
+<body>
+
+<center>
+<h1>~ THE MAGIC ADVICE BOX ~</h1>
+</center>
+
+<p>Click the button below and it will give you <b>SUPER</b> good advice. Made by me. Do not steal.</p>
+
+<hr>
+
+<button onclick="giveAdvice()">CLICK HERE FOR ADVICE</button>
+
+<p id="outputPlace">(your advice will show up right here)</p>
+
+<hr>
+
+<p id="counterPlace">You have clicked the button 0 times.</p>
+
+<p>YU CLICKED THIS ONE AT: <time id="clickTime">(not clicked yet)</time></p>
+
+
+
+<script>
+
+function giveAdvice() {
+
+    clickCount = clickCount + 1;
+    console.log("button was clicked!!"); 
+
+    var randomSpot = Math.floor(Math.random() * myAdviceList.length);
+    var pickedAdvice = myAdviceList[randomSpot];
+    console.log("Advice for you mr hack club reviewer: " + pickedAdvice);
+
+    document.getElementById("outputPlace").innerHTML = "ADVICE: " + pickedAdvice;
+    document.getElementById("counterPlace").innerHTML = "You have clicked the button " + clickCount + " times.";
+
+    var rightNow = new Date();
+    document.getElementById("clickTime").innerHTML = rightNow.toLocaleTimeString();
+} 
+
+</script>
+
+</body>
+</html>
